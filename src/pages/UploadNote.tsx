@@ -5,6 +5,8 @@ import { Button } from '@/components/ui/Button';
 import { supabase } from '@/lib/supabase';
 import { toast } from 'sonner';
 import { useAuth } from '@/contexts/AuthContext';
+import { subjects, institutions } from '@/lib/constants';
+import Select from 'react-select';
 
 const UploadNote: React.FC = () => {
   const navigate = useNavigate();
@@ -13,6 +15,11 @@ const UploadNote: React.FC = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [file, setFile] = useState<File | null>(null);
+  const [subject, setSubject] = useState<{ value: string; label: string } | null>(null);
+  const [institution, setInstitution] = useState<{ value: string; label: string } | null>(null);
+
+  const subjectOptions = subjects.map(sub => ({ value: sub, label: sub }));
+  const institutionOptions = institutions.map(inst => ({ value: inst, label: inst }));
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -53,6 +60,16 @@ const UploadNote: React.FC = () => {
       return;
     }
 
+    if (!subject) {
+      toast.error('Please select a subject');
+      return;
+    }
+
+    if (!institution) {
+      toast.error('Please select an institution');
+      return;
+    }
+
     setLoading(true);
 
     try {
@@ -86,7 +103,9 @@ const UploadNote: React.FC = () => {
         file_url: publicUrl,
         file_path: filePath,
         user_id: user.id,
-        created_at: new Date().toISOString()
+        created_at: new Date().toISOString(),
+        subject: subject.value,
+        institution: institution.value
       });
 
       if (dbError) {
@@ -144,6 +163,38 @@ const UploadNote: React.FC = () => {
               rows={3}
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
               maxLength={500}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="subject" className="block text-sm font-medium text-gray-700">
+              Subject
+            </label>
+            <Select
+              id="subject"
+              value={subject}
+              onChange={(option) => setSubject(option)}
+              options={subjectOptions}
+              className="mt-1"
+              placeholder="Search or select a subject"
+              isClearable
+              required
+            />
+          </div>
+
+          <div>
+            <label htmlFor="institution" className="block text-sm font-medium text-gray-700">
+              Institution
+            </label>
+            <Select
+              id="institution"
+              value={institution}
+              onChange={(option) => setInstitution(option)}
+              options={institutionOptions}
+              className="mt-1"
+              placeholder="Search or select an institution"
+              isClearable
+              required
             />
           </div>
 

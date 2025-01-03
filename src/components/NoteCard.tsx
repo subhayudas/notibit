@@ -33,6 +33,18 @@ export const NoteCard: React.FC<NoteCardProps> = ({ note }) => {
         <Calendar className="h-4 w-4 mr-1" />
         {formattedDate}
       </div>
+      <div className="flex flex-wrap gap-2 mt-2">
+        {note.subject && (
+          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+            {note.subject}
+          </span>
+        )}
+        {note.institution && (
+          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+            {note.institution}
+          </span>
+        )}
+      </div>
     </div>
   );
 };

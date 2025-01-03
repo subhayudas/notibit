@@ -8,6 +8,7 @@ import SignUp from './pages/SignUp';
 import NotesLibrary from './pages/NotesLibrary';
 import UploadNote from './pages/UploadNote';
 import { AuthProvider } from './contexts/AuthContext';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -25,6 +26,18 @@ function App() {
             </Routes>
           </main>
           <Toaster position="top-right" />
+          <Footer 
+            socialLinks={{
+              linkedin: "https://linkedin.com/in/youractualusername",
+              github: "https://github.com/youractualusername",
+              twitter: "https://twitter.com/youractualusername"
+            }}
+            contactInfo={{
+              email: "your.actual.email@example.com",
+              phone: "+1 234 567 890"
+            }}
+            name="Your Actual Name"
+          />
         </div>
       </AuthProvider>
     </Router>

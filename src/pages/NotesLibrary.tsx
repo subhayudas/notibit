@@ -14,7 +14,9 @@ const NotesLibrary: React.FC = () => {
   const filteredNotes = useMemo(() => {
     return notes.filter(note =>
       note.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      note.description.toLowerCase().includes(searchQuery.toLowerCase())
+      note.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      note.subject?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      note.institution?.toLowerCase().includes(searchQuery.toLowerCase())
     );
   }, [notes, searchQuery]);
 
@@ -29,7 +31,7 @@ const NotesLibrary: React.FC = () => {
         <Link to="/upload">
           <Button>
             <Upload className="h-4 w-4 mr-2" />
-            Upload Note
+            Upload
           </Button>
         </Link>
       </div>
