@@ -8,7 +8,9 @@ export const subjects = [
   'Electrical',
   'Mechanical',
   'Civil',
-  'Chemical',
+  'Environmental Science',
+  'Communication',
+  'coding', 
   'Biotechnology',
   'Economics',
   'Psychology',
@@ -42,7 +44,17 @@ export const institutions = [
   'iiit hyderabad',
   'iiit lucknow',
   'iiit surat',
-  'iiit bangalore';
+  'iiit bangalore',
   'iiit delhi',
+  'iiit kota',
+  'iiit kalyani',
+  'iiit kannur',
+  'iiit kurnool',
+  'iiit nagpur',
+  'rgpv university',
+  'techno india university',
+  'insitute of engineering and management (iem)',
+
+
   // Add more institutions as needed
 ]; 
