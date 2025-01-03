@@ -8,7 +8,7 @@ import SignUp from './pages/SignUp';
 import NotesLibrary from './pages/NotesLibrary';
 import UploadNote from './pages/UploadNote';
 import { AuthProvider } from './contexts/AuthContext';
-import Footer from './components/Footer';
+import Footer from './components/footer';
 
 function App() {
   return (
