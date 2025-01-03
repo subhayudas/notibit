@@ -4,20 +4,19 @@ export const subjects = [
   'Physics',
   'Chemistry',
   'Biology',
-  'Engineering',
-  'Business Administration',
+  'Electronics',
+  'Electrical',
+  'Mechanical',
+  'Civil',
+  'Chemical',
+  'Biotechnology',
   'Economics',
   'Psychology',
-  'Sociology',
   'Literature',
   'History',
   'Political Science',
   'Geography',
   'Philosophy',
-  'Art History',
-  'Music',
-  'Dance',
-  'Theatre',
   // Add more subjects as needed
 ];
 
@@ -37,6 +36,13 @@ export const institutions = [
   'University of Calcutta',
   'University of Delhi',
   'University of Mumbai',
-  
+  'xavier university',
+  'christ university',
+  'iiit bhubaneswar',
+  'iiit hyderabad',
+  'iiit lucknow',
+  'iiit surat',
+  'iiit bangalore';
+  'iiit delhi',
   // Add more institutions as needed
 ]; 
