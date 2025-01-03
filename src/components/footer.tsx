@@ -104,7 +104,7 @@ const Footer = () => {
           transition={{ delay: 0.5 }}
         >
           <p className="text-white drop-shadow-md">
-            © {new Date().getFullYear()} Notibit. All rights reserved.
+            © {new Date().getFullYear()} Notibit | Subhayu Das. All rights reserved.
           </p>
         </motion.div>
       </div>
