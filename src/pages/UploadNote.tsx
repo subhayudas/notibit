@@ -31,9 +31,9 @@ const UploadNote: React.FC = () => {
         return;
       }
 
-      // Validate file size (5MB limit)
-      if (selectedFile.size > 5 * 1024 * 1024) {
-        toast.error('File size must be less than 5MB');
+      // Validate file size (50MB limit)
+      if (selectedFile.size > 50 * 1024 * 1024) {
+        toast.error('File size must be less than 50MB');
         return;
       }
 
@@ -220,7 +220,7 @@ const UploadNote: React.FC = () => {
                   </label>
                   <p className="pl-1">or drag and drop</p>
                 </div>
-                <p className="text-xs text-gray-500">PDF up to 5MB</p>
+                <p className="text-xs text-gray-500">PDF up to 50MB</p>
                 {file && (
                   <p className="text-sm text-gray-500 break-all">{file.name}</p>
                 )}
